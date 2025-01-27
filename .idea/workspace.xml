@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="using github guides to do the maven">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" afterDir="false" />
+    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +14,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -21,12 +22,12 @@
     &quot;assignee&quot;: &quot;Ayub-Hanif&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ayub-Hanif/post_analyzer",
-    "accountId": "d1d2750e-a48d-4cce-a178-9a40ce5b4ae8"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ayub-Hanif/post_analyzer&quot;,
+    &quot;accountId&quot;: &quot;d1d2750e-a48d-4cce-a178-9a40ce5b4ae8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -36,21 +37,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/EEC 160/ECS160-HW1-skeleton",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/EEC 160/ECS160-HW1-skeleton&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ECS160-HW1-skeleton" />
@@ -82,7 +83,7 @@
       <updated>1737961286404</updated>
       <workItem from="1737961288157" duration="910000" />
       <workItem from="1737962291833" duration="322000" />
-      <workItem from="1737963425732" duration="1581000" />
+      <workItem from="1737963425732" duration="1658000" />
     </task>
     <task id="LOCAL-00001" summary="did alot of the pom.xml including the extra points.">
       <option name="closed" value="true" />
@@ -116,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737964730308</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="works!!">
+      <option name="closed" value="true" />
+      <created>1737965051263</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737965051263</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +135,7 @@
     <MESSAGE value="did alot of the pom.xml including the extra points." />
     <MESSAGE value="now adding the workflow stuff" />
     <MESSAGE value="using github guides to do the maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="using github guides to do the maven" />
+    <MESSAGE value="works!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="works!!" />
   </component>
 </project>
