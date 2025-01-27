@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +82,7 @@
       <workItem from="1737961288157" duration="910000" />
       <workItem from="1737962291833" duration="322000" />
       <workItem from="1737963425732" duration="1658000" />
+      <workItem from="1737965109938" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="did alot of the pom.xml including the extra points.">
       <option name="closed" value="true" />
@@ -125,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737965051263</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="done">
+      <option name="closed" value="true" />
+      <created>1737965143166</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737965143166</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +143,7 @@
     <MESSAGE value="now adding the workflow stuff" />
     <MESSAGE value="using github guides to do the maven" />
     <MESSAGE value="works!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="works!!" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
 </project>
