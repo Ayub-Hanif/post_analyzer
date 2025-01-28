@@ -1,34 +1,45 @@
 package com.ecs160.hw1;
-
-import java.util.Date;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
-    private final int post_id;
+    private final int post_Id;
+    private final String post_content;
+    private final Timestamp creation_time;
     private final int word_count;
-    private final Date creation_date;
-    private final List<Post> replies;
+    private final List<Post> post_replies;
 
-    public Post(int post_id, int word_count, Date creation_date, List<Post> replies) {
-        this.post_id = post_id;
+    public Post(int post_Id, String post_content, Timestamp creation_time, int word_count) {
+        this.post_Id = post_Id;
+        this.post_content = post_content;
+        this.creation_time = creation_time;
         this.word_count = word_count;
-        this.creation_date = creation_date;
-        this.replies = replies;
+        this.post_replies = new ArrayList<>();
     }
 
-    public int getPost_id() {
-        return post_id;
+    public int get_post_Id() {
+        return post_Id;
+    }
+
+    public String get_post_content() {
+        return post_content;
+    }
+
+    public Timestamp getCreation_time() {
+        return creation_time;
     }
 
     public int getWord_count() {
         return word_count;
     }
-
-    public Date getCreation_date() {
-        return creation_date;
+    public List<Post> get_post_replies() {
+        return post_replies;
+    }
+    public void add_reply_under_post(Post reply) {
+        this.post_replies.add(reply);
     }
 
-    public List<Post> getReplies() {
-        return replies;
-    }
+
+
 }

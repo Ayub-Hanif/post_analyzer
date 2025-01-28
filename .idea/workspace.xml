@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="added the readME file.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Post.java" afterDir="false" />
+    <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="somewhat correct output after the parser have been made.">
+      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Weight_analyzers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Analyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -25,13 +30,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ayub-Hanif/post_analyzer&quot;,
-    &quot;accountId&quot;: &quot;d1d2750e-a48d-4cce-a178-9a40ce5b4ae8&quot;
+    &quot;url&quot;: &quot;https://github.com/Ayub-Hanif/post_analyzer.git&quot;,
+    &quot;accountId&quot;: &quot;034137d3-2841-4470-adcd-73681e2fe56b&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -43,21 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/EEC 160/ECS160-HW1-skeleton&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ECS 160/hw#1/post_analyzer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\EEC 160\ECS160-HW1-skeleton" />
@@ -79,8 +85,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -96,6 +102,7 @@
       <workItem from="1737962291833" duration="322000" />
       <workItem from="1737963425732" duration="1658000" />
       <workItem from="1737965109938" duration="1356000" />
+      <workItem from="1738016939372" duration="5565000" />
     </task>
     <task id="LOCAL-00001" summary="did alot of the pom.xml including the extra points.">
       <option name="closed" value="true" />
@@ -167,6 +174,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="did alot of the pom.xml including the extra points." />
     <MESSAGE value="now adding the workflow stuff" />
@@ -175,6 +193,7 @@
     <MESSAGE value="done" />
     <MESSAGE value="our initial code idea" />
     <MESSAGE value="added the readME file." />
-    <option name="LAST_COMMIT_MESSAGE" value="added the readME file." />
+    <MESSAGE value="somewhat correct output after the parser have been made." />
+    <option name="LAST_COMMIT_MESSAGE" value="somewhat correct output after the parser have been made." />
   </component>
 </project>
