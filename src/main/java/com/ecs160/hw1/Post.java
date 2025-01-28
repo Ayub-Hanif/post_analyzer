@@ -26,11 +26,11 @@ public class Post {
         return post_content;
     }
 
-    public Timestamp getCreation_time() {
+    public Timestamp get_creation_time() {
         return creation_time;
     }
 
-    public int getWord_count() {
+    public int get_word_count() {
         return word_count;
     }
     public List<Post> get_post_replies() {

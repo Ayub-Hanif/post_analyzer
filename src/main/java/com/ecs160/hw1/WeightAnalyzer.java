@@ -2,9 +2,9 @@ package com.ecs160.hw1;
 import java.util.List;
 
 
-class Weight_analyzers implements Analyzer {
+class WeightAnalyzer implements Analyzer {
     private final List<Post> posts;
-    Weight_analyzers(List<Post> posts)  {
+    WeightAnalyzer(List<Post> posts)  {
        this.posts = posts;
     }
     public int count_total_posts() {

@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1938066-3a4d-4577-8c52-68c5a6813148" name="Changes" comment="somewhat correct output after the parser have been made.">
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Weight_analyzers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test_input.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ecs160/hw1/JsonParserFileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/ecs160/hw1/PostTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Analyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Json_parser_file.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/JsonParserFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Social_analyzer_driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/SocialAnalyzerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/Weight_analyzers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecs160/hw1/WeightAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ecs160/hw1/BasicAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ecs160/hw1/SocialAnalyzerDriverTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +106,7 @@
       <workItem from="1737962291833" duration="322000" />
       <workItem from="1737963425732" duration="1658000" />
       <workItem from="1737965109938" duration="1356000" />
-      <workItem from="1738016939372" duration="5565000" />
+      <workItem from="1738016939372" duration="11787000" />
     </task>
     <task id="LOCAL-00001" summary="did alot of the pom.xml including the extra points.">
       <option name="closed" value="true" />
@@ -168,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737965751963</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="somewhat correct output after the parser have been made.">
+      <option name="closed" value="true" />
+      <created>1738022568305</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738022568305</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

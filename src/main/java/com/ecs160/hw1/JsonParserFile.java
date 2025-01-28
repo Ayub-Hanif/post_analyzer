@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Json_parser_file {
+public class JsonParserFile {
     public List<Post> json_parser(String filePath) {
         List<Post> posts_file = new ArrayList<>();
 

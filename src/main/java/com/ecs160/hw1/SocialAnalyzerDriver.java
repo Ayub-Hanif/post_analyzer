@@ -4,13 +4,13 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class Social_analyzer_driver {
+public class SocialAnalyzerDriver {
     public static void main(String[] args) {
 
         try (PrintWriter file_out = new PrintWriter(new FileWriter("output.txt"))) {
             // We will output it first to see if we are correctly parsing the file.
-            Json_parser_file parser = new Json_parser_file();
-            List<Post> social_posts = parser.json_parser("input.json");
+            JsonParserFile parser = new JsonParserFile();
+            List<Post> social_posts = parser.json_parser("test_input.json");
 
             // we iterate over the posts and write them to the file
             for (Post post : social_posts) {
