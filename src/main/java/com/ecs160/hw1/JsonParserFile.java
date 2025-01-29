@@ -33,6 +33,10 @@ public class JsonParserFile {
         try {
             File file = new File(filePath);
             if (file.exists()) {
+                if(file.length() == 0){
+                    System.err.println("empty file: " + filePath);
+                    System.exit(1);
+                }
                 input_file = new FileInputStream(file);
             } else {
                 input_file = getClass().getClassLoader().getResourceAsStream(filePath);
