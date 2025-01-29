@@ -28,7 +28,10 @@ public class SocialAnalyzerDriver {
                 filePath = args[i + 1];
             }
         }
-
+        if(filePath == null) {
+            System.err.println("empty file");
+            System.exit(1);
+        }
         Database data_base = new Database(sql_name, user, password);
         
         initi_db(data_base, filePath);

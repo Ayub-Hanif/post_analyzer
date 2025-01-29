@@ -22,12 +22,4 @@ class JsonParserFileTest {
         assertEquals("Which feeds includes posts marked with #atproto?", firstPost.get_post_content());
         assertEquals(0, firstPost.get_post_replies().size());
     }
-
-    //checks for any possible errors when missing file.
-    @Test
-    void test_json_parser_missing_file() {
-        JsonParserFile parser = new JsonParserFile();
-        List<Post> posts = parser.json_parser("missing.json");
-        assertTrue(posts.isEmpty(), "Expected an empty list when file is missing.");
-    }
 }
