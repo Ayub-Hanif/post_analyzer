@@ -17,27 +17,46 @@ public class SocialAnalyzerDriver {
     private static final String password = "9981"; 
     public static void main(String[] args) {
 
+        boolean weighted = false;
+        String filePath = "input.json";
+
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("--weighted") && i + 1 < args.length && args[i + 1].equals("true")) {
+                weighted = true;
+            }
+            if (args[i].equals("--file") && i + 1 < args.length) {
+                filePath = args[i + 1];
+            }
+        }
+
         Database data_base = new Database(sql_name, user, password);
         
-        initi_db(data_base);
+        initi_db(data_base, filePath);
 
         List<Post> post_list = get_posts_db();
 
         Analyzer analyzer = new Analyzer(post_list);
 
+        System.out.println("Total posts: " + analyzer.count_total_posts());
+        System.out.println("Average number of replies: " + analyzer.calc_avg_replies(weighted));
+        System.out.println("Average duration between replies: " + analyzer.get_format_duration());
+
         file_output(post_list, analyzer);
     }
 
-    private static void initi_db(Database data_base) {
+    private static void initi_db(Database data_base, String filePath) {
         //before the new stuff is added, the table is cleared.
         data_base.free_table();
 
         try{
             JsonParserFile parser = new JsonParserFile();
-            List<Post> posts_from_blue = parser.json_parser("input.json");
+            List<Post> posts_from_blue = parser.json_parser(filePath);
+
+            if (posts_from_blue.isEmpty()) {
+                System.err.println("empty file: " + filePath);
+            }
 
             for (Post post : posts_from_blue) {
-
                 data_base.insert_post(post, null);
             }
         }catch (Exception exception) {
@@ -126,7 +145,7 @@ public class SocialAnalyzerDriver {
                 file_out.println("Number of Replies: " + sql_replies.size());
                 file_out.println("List of Replies: " + sql_replies);
             }
-            System.out.println("Data from sql file created and filled fully into output.txt");
+           // System.out.println("Data from sql file created and filled fully into output.txt");
         } catch (Exception e) {
             e.printStackTrace();
         }

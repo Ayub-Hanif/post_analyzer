@@ -43,7 +43,7 @@ public class Database {
             );""";
 
             connect.createStatement().executeUpdate(sql_table);
-            System.out.println("Table created or/and checked successfully");
+            //System.out.println("Table created or/and checked successfully");
 
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -81,7 +81,7 @@ public class Database {
         try {
             String sql_table = "DELETE FROM posts;";
             connect.createStatement().executeUpdate(sql_table);
-            System.out.println("cleanned the table from any Data");
+            //System.out.println("cleanned the table from any Data");
         } catch (SQLException exception) {
             exception.printStackTrace();
             throw new RuntimeException("Table still have values after deletion");
@@ -91,7 +91,7 @@ public class Database {
     public void insert_post(Post post, Integer parent_post_Id) {
 
         if (post_table_exists(post.get_post_Id())) {
-            System.out.println("Post with post_Id: " + post.get_post_Id() + " already exists, skipping.");
+            //System.out.println("Post with post_Id: " + post.get_post_Id() + " already exists, skipping.");
             return;
         }
         try {
@@ -111,8 +111,6 @@ public class Database {
             }
             info.executeUpdate();
 
-            System.out.println("added with post_Id: " + post.get_post_Id());
-
             for(Post replies : post.get_post_replies()) {
                 insert_post(replies, post.get_post_Id());
             }
@@ -126,7 +124,7 @@ public class Database {
     public void close() {
         try {
             connect.close();
-            System.out.println("Connection of database is closed");
+           // System.out.println("Connection of database is closed");
         } catch (SQLException exception) {
             exception.printStackTrace();
             throw new RuntimeException("Connection didn't close correctly");

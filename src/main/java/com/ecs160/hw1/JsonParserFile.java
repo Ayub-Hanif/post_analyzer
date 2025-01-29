@@ -12,7 +12,9 @@ import java.util.UUID;
 //sql time based and instants
 import java.sql.Timestamp;
 import java.time.Instant;
-
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 //file readers
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,13 +29,21 @@ public class JsonParserFile {
     public List<Post> json_parser(String filePath) {
         List<Post> posts_file = new ArrayList<>();
 
-        InputStream input_file = getClass().getClassLoader().getResourceAsStream(filePath);
-        if (input_file == null) {
-            throw new NullPointerException("File not found: " + filePath);
-        }
+        InputStream input_file = null;
+        try {
+            File file = new File(filePath);
+            if (file.exists()) {
+                input_file = new FileInputStream(file);
+            } else {
+                input_file = getClass().getClassLoader().getResourceAsStream(filePath);
+                if (input_file == null) {
+                    System.err.println("File not found: " + filePath);
+                }
+            }
 
-        Reader file_reader = new InputStreamReader(input_file);
-        JsonElement parse_element = JsonParser.parseReader(file_reader);
+
+            Reader file_reader = new InputStreamReader(input_file);
+            JsonElement parse_element = JsonParser.parseReader(file_reader);
 
             JsonObject json_object = parse_element.getAsJsonObject();
             JsonArray get_array = json_object.get("feed").getAsJsonArray();
@@ -49,6 +59,11 @@ public class JsonParserFile {
                     posts_file.add(post);
                 }
             }
+        } catch (FileNotFoundException exception) {
+            System.err.println("File not found: " + filePath);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
         return posts_file;
     }
 

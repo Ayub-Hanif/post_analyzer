@@ -27,9 +27,7 @@ class JsonParserFileTest {
     @Test
     void test_json_parser_missing_file() {
         JsonParserFile parser = new JsonParserFile();
-        Exception exception = assertThrows(NullPointerException.class, () -> {
-            parser.json_parser("missing.json");
-        });
-        assertEquals("File not found: missing.json", exception.getMessage());
+        List<Post> posts = parser.json_parser("missing.json");
+        assertTrue(posts.isEmpty(), "Expected an empty list when file is missing.");
     }
 }
