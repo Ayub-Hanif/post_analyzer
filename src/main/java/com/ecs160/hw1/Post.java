@@ -39,7 +39,4 @@ public class Post {
     public void add_reply_under_post(Post reply) {
         this.post_replies.add(reply);
     }
-
-
-
 }
