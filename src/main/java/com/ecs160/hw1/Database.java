@@ -13,8 +13,6 @@ public class Database {
     private final String sql_password;
     private Connection connect;
 
-    
-
     public Database(String sql_name, String sql_user, String sql_password) {
         this.sql_name = sql_name;
         this.sql_user = sql_user;

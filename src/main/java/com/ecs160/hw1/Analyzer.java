@@ -1,10 +1,11 @@
 package com.ecs160.hw1;
-import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.time.Duration;
+import java.time.LocalTime;
 
 class SortByTimestamp implements Comparator<Post> {
     public int compare(Post o1, Post o2) {
@@ -85,4 +86,11 @@ class Analyzer {
         }
         return (double) total_duration / this.count_total_posts();
     }
+
+    public String get_format_duration() {
+        double avg_duration = calc_avg_duration();
+        Duration duration = Duration.ofSeconds((long) avg_duration);
+        return LocalTime.ofSecondOfDay(duration.getSeconds()).toString();
+    }
 }
+
