@@ -1,5 +1,6 @@
 package com.ecs160.hw1;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class SocialAnalyzerDriver {
     public static void main(String[] args) {
 
         boolean weighted = false;
-        String filePath = "input.json";
+        String filePath = "empty.json";
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("--weighted") && i + 1 < args.length && args[i + 1].equals("true")) {
@@ -46,14 +47,15 @@ public class SocialAnalyzerDriver {
     private static void initi_db(Database data_base, String filePath) {
         //before the new stuff is added, the table is cleared.
         data_base.free_table();
+        File file = new File(filePath);
+        if(file.length() == 0){
+            System.err.println("empty file: " + filePath);
+            System.exit(1);
+        }
 
         try{
             JsonParserFile parser = new JsonParserFile();
             List<Post> posts_from_blue = parser.json_parser(filePath);
-
-            if (posts_from_blue.isEmpty()) {
-                System.err.println("empty file: " + filePath);
-            }
 
             for (Post post : posts_from_blue) {
                 data_base.insert_post(post, null);
