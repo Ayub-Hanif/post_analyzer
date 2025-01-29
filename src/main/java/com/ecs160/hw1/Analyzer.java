@@ -37,6 +37,9 @@ class Analyzer {
     This calculation only acts on replies, not posts.
      */
     public double calc_avg_replies(boolean weighted) {
+        if (this.count_total_posts() == 0) {
+            return 0;
+        }
         if (!weighted) {
             int total_post_replies = 0;
             for (Post p : posts) {
@@ -62,6 +65,9 @@ class Analyzer {
     }
 
     public double calc_avg_duration() {
+        if (this.count_total_posts() == 0) {
+            return 0;
+        }
         long total_duration = 0;
         if (posts.isEmpty()) {
             return 0; // obviously
