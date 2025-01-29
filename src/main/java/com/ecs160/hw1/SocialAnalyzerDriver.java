@@ -20,7 +20,7 @@ public class SocialAnalyzerDriver {
 
 
         boolean weighted = false;
-        String filePath = "empty.json";
+        String filePath = "input.json";
 
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("--weighted") && i + 1 < args.length && args[i + 1].equals("true")) {
@@ -30,11 +30,7 @@ public class SocialAnalyzerDriver {
                 filePath = args[i + 1];
             }
         }
-        File file = new File(filePath);
-        if(file.length() == 0){
-            System.err.println("empty file: " + filePath);
-            System.exit(1);
-        }
+
         Database data_base = new Database(sql_name, user, password);
         
         initi_db(data_base, filePath);
