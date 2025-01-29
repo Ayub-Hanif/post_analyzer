@@ -14,6 +14,8 @@ public class SocialAnalyzerDriver {
 
         Database data_base = new Database("socialmedia_db", "postgres", "9981");
 
+        //before the new stuff is added, the table is cleared.
+        data_base.free_table();
 
         try{
             JsonParserFile parser = new JsonParserFile();

@@ -79,17 +79,27 @@ public class Database {
         return false;
     }
 
+    public void free_table(){
+        try {
+            String sql_table = "DELETE FROM posts;";
+            connect.createStatement().executeUpdate(sql_table);
+            System.out.println("cleanned the table from any Data");
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+            throw new RuntimeException("Table still have values after deletion");
+        }
+    }
+
     public void insert_post(Post post, Integer parent_post_Id) {
 
         if (post_table_exists(post.get_post_Id())) {
-            System.out.println("Post with post_Id: " + post.get_post_Id() + " already exists");
+            System.out.println("Post with post_Id: " + post.get_post_Id() + " already exists, skipping.");
             return;
         }
         try {
             String sql_query = """
             INSERT INTO posts (post_Id, post_content, creation_time, word_count, parent_post_Id)
             VALUES (?, ?, ?, ?, ?)
-            ON CONFLICT (post_Id) DO NOTHING;
             """;
             PreparedStatement info = connect.prepareStatement(sql_query);
             info.setInt(1, post.get_post_Id());
