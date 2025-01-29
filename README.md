@@ -18,4 +18,9 @@ A Java application to store and analyze social media posts from Blue sky.
    java -jar target/HW1-solution-1.0-SNAPSHOT.jar
 ## Database Setup
 1. **Install PostgreSQL** (if you haven't already).
-2. coming soon!
+2. Make sure you have the ```socialmedia_db``` Data base create.
+3. If you haven't or it is filled with other stuff you can do:
+   1. ```DROP DATABASE socialmedia_db;```
+   2. ```CREATE DATABASE socialmedia_db;```
+   3. ```\q```
+4. Then you can run the code perfectly fine.
