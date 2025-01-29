@@ -18,6 +18,7 @@ public class SocialAnalyzerDriver {
     private static final String password = "9981"; 
     public static void main(String[] args) {
 
+
         boolean weighted = false;
         String filePath = "empty.json";
 
@@ -28,6 +29,11 @@ public class SocialAnalyzerDriver {
             if (args[i].equals("--file") && i + 1 < args.length) {
                 filePath = args[i + 1];
             }
+        }
+        File file = new File(filePath);
+        if(file.length() == 0){
+            System.err.println("empty file: " + filePath);
+            System.exit(1);
         }
         Database data_base = new Database(sql_name, user, password);
         
@@ -45,14 +51,9 @@ public class SocialAnalyzerDriver {
     }
 
     private static void initi_db(Database data_base, String filePath) {
+
         //before the new stuff is added, the table is cleared.
         data_base.free_table();
-        File file = new File(filePath);
-        if(file.length() == 0){
-            System.err.println("empty file: " + filePath);
-            System.exit(1);
-        }
-
         try{
             JsonParserFile parser = new JsonParserFile();
             List<Post> posts_from_blue = parser.json_parser(filePath);
