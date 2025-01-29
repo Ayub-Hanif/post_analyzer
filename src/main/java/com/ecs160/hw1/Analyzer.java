@@ -29,6 +29,12 @@ class Analyzer {
     public int count_total_posts() {
         return posts.size();
     }
+    /*
+    Calculates the average number of replies, with a boolean option to toggle weighted/unweighted functionality.
+
+    This calculation is not recursive--only "top level" replies are considered.
+    This calculation only acts on replies, not posts.
+     */
     public double calc_avg_replies(boolean weighted) {
         if (!weighted) {
             int total_post_replies = 0;
@@ -46,7 +52,7 @@ class Analyzer {
             for (Post p : posts) {
                 double current_post_weight = 0;
                 for (Post reply : p.get_post_replies()) {
-                    current_post_weight += 1 + ((((double)p.get_word_count()) / this.longest_post_word_count));
+                    current_post_weight += 1 + ((((double)reply.get_word_count()) / this.longest_post_word_count));
                 }
                 total_post_weights += current_post_weight;
             }
@@ -56,15 +62,26 @@ class Analyzer {
 
     public double calc_avg_duration() {
         long total_duration = 0;
+        if (posts.isEmpty()) {
+            return 0; // obviously
+        } else if (posts.size() == 1) {
+            if (posts.getFirst().get_post_replies().isEmpty()) {
+               return 0; // if the post has at least one reply, we can still work with it.
+            }
+        }
         for (Post p : posts) {
             List<Post> replies_and_post = p.get_post_replies();
             replies_and_post.addFirst(p); // add the post, it should be considered a comment for purposes of calculation
             replies_and_post.sort(new SortByTimestamp());
+            if (p.hashCode() != replies_and_post.getFirst().hashCode()) {
+                continue;  // parent post should be the earliest timestamp. if not, then this post is probably bad/faulty, discard it
+            }
             for (int i = 0; i < replies_and_post.size() - 1; i++) {
                 Instant currentInstant = replies_and_post.get(i + 1).get_creation_time().toInstant();
                 Instant previousInstant = replies_and_post.get(i).get_creation_time().toInstant();
-                total_duration += ChronoUnit.SECONDS.between(currentInstant, previousInstant);
+                total_duration += ChronoUnit.SECONDS.between(previousInstant, currentInstant);
             }
+            replies_and_post.removeFirst(); // this is a reference to real replies object
         }
         return (double) total_duration / this.count_total_posts();
     }
