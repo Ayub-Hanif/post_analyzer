@@ -28,7 +28,7 @@ public class SocialAnalyzerDriver {
                 filePath = args[i + 1];
             }
         }
-        if(filePath == null) {
+        if(filePath.isEmpty()) {
             System.err.println("empty file");
             System.exit(1);
         }
