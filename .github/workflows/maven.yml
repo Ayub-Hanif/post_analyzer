@@ -9,6 +9,8 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Run Maven tests
+      - name: Install dependencies
         run: mvn clean install
+      - name: Run Maven tests
+        run: mvn test
 
