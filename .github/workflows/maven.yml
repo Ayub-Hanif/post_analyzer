@@ -1,7 +1,7 @@
 name: Maven Build and Test
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Maven-Build-Test-Action:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
