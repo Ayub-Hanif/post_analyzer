@@ -1,11 +1,11 @@
 package com.ecs160.hw1;
+import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.time.Duration;
-import java.time.LocalTime;
 
 class SortByTimestamp implements Comparator<Post> {
     public int compare(Post o1, Post o2) {
@@ -33,8 +33,7 @@ class Analyzer {
     /*
     Calculates the average number of replies, with a boolean option to toggle weighted/unweighted functionality.
 
-    This calculation is not recursive--only "top level" replies are considered.
-    This calculation only acts on replies, not posts.
+    This calculation is not recursive--only immediate replies to a post are considered.
      */
     public double calc_avg_replies(boolean weighted) {
         if (this.count_total_posts() == 0) {
@@ -64,6 +63,9 @@ class Analyzer {
         }
     }
 
+    /*
+    Calculates the average duration between replies of all posts.
+    */
     public double calc_avg_duration() {
         if (this.count_total_posts() == 0) {
             return 0;
@@ -76,6 +78,7 @@ class Analyzer {
                return 0; // if the post has at least one reply, we can still work with it.
             }
         }
+        int num_intervals = 0;
         for (Post p : posts) {
             List<Post> replies_and_post = p.get_post_replies();
             replies_and_post.addFirst(p); // add the post, it should be considered a comment for purposes of calculation
@@ -87,12 +90,16 @@ class Analyzer {
                 Instant currentInstant = replies_and_post.get(i + 1).get_creation_time().toInstant();
                 Instant previousInstant = replies_and_post.get(i).get_creation_time().toInstant();
                 total_duration += ChronoUnit.SECONDS.between(previousInstant, currentInstant);
+                num_intervals += 1;
             }
             replies_and_post.removeFirst(); // this is a reference to real replies object
         }
-        return (double) total_duration / this.count_total_posts();
+        return (double) total_duration / num_intervals;
     }
 
+    /*
+    Returns the average duration between replies of all posts in a human-readable format.
+    */
     public String get_format_duration() {
         double avg_duration = calc_avg_duration();
         Duration duration = Duration.ofSeconds((long) avg_duration);
