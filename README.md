@@ -12,6 +12,11 @@ A Java application to store and analyze social media posts from Blue sky.
 - We need to calculate statistics (total posts, avg replies, etc.)
 - Supports weighted analysis (true/false)
 
+# SQL Database Credentials
+User: postgres
+Password: 9981
+Connection URL: jdbc:postgresql://localhost:5432/socialmedia_db
+
 ## Getting Started
 1. Clone this repo.
 2. Run `mvn clean install` in IntelliJ or terminal.
@@ -25,6 +30,3 @@ Successful GitHub Action run:
 
 GitHub Action badge:
 ![GitHub Action Badge](gh-action-badge.png)
-
-
-
