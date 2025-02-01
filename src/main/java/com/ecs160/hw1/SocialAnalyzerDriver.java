@@ -1,15 +1,12 @@
 package com.ecs160.hw1;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SocialAnalyzerDriver {
     private static final String sql_name = "socialmedia_db";
@@ -42,8 +39,6 @@ public class SocialAnalyzerDriver {
         System.out.println("Total posts: " + analyzer.count_total_posts());
         System.out.println("Average number of replies: " + analyzer.calc_avg_replies(weighted));
         System.out.println("Average duration between replies: " + analyzer.get_format_duration());
-
-        file_output(post_list, analyzer);
     }
 
     private static void initi_db(Database data_base, String filePath) {
@@ -117,35 +112,5 @@ public class SocialAnalyzerDriver {
             exception.printStackTrace();
         }
         return post_replies;
-    }
-
-    private static void file_output(List<Post> post_list, Analyzer analyzer) {
-        try (PrintWriter file_out = new PrintWriter(new FileWriter("output.txt"))) {
-
-            file_out.println("Total num of Posts: " + analyzer.count_total_posts());
-            file_out.println("AVG  Replies per post: " + analyzer.calc_avg_replies(false));
-            file_out.println("AVG  Replies per post weighted: " + analyzer.calc_avg_replies(true));
-            file_out.println("AVG Interval Between Replies: " + analyzer.get_format_duration());
-
-            file_out.println("\n#######################################################################################################\n");
-
-            for (Post post : post_list) {
-                file_out.println("#######################################################################################################");
-                file_out.println("Post ID: " + post.get_post_Id() + "Post Content: " + post.get_post_content());
-                file_out.println("Post create Time: " + post.get_creation_time() + "Post Word Count: " + post.get_word_count());
-
-                List<String> sql_replies = new ArrayList<>();
-
-                for (Post reply : post.get_post_replies()) {
-                    sql_replies.add("Reply ID: " + reply.get_post_Id() + "Reply Content: " + reply.get_post_content());
-                }
-
-                file_out.println("Number of Replies: " + sql_replies.size());
-                file_out.println("List of Replies: " + sql_replies);
-            }
-           // System.out.println("Data from sql file created and filled fully into output.txt");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
