@@ -1,7 +1,0 @@
-Total num of Posts: 0
-AVG  Replies per post: 0.0
-AVG  Replies per post weighted: 0.0
-AVG Interval Between Replies: 00:00
-
-#######################################################################################################
-
