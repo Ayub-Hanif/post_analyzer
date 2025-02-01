@@ -13,9 +13,9 @@ A Java application to store and analyze social media posts from Blue sky.
 - Supports weighted analysis (true/false)
 
 # SQL Database Credentials
-User: postgres
-Password: 9981
-Connection URL: jdbc:postgresql://localhost:5432/socialmedia_db
+- User: postgres
+- Password: 9981
+- Connection URL: jdbc:postgresql://localhost:5432/socialmedia_db
 
 ## Getting Started
 1. Clone this repo.
